@@ -20,7 +20,7 @@ form {
 
 label {display: block;}
 
-input[type=text], select {
+input[type=text], select, textarea {
   width: 100%;
   padding: 12px;
   margin: 8px 0;

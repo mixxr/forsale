@@ -3,19 +3,22 @@
 	// utility function to check form data
 	var titles = [
     "forsale-bkt, For Sale",
-    "pasticceria-sana.com, Pasticceria Sana",
-    "certificazioni-esg.com, Certificazioni ESG"
+    "pasticceria, Pasticceria Sana",
+    "certificazioni-esg, Certificazioni ESG",
+    "digitalposture, Digital Posture",
+    "digital-posture, Digital Posture",
+	"digital-governance, Digital Governance"	
   ];
 
 	$(document).ready(function () {
     let hn = window.location.hostname;
     console.log(hn);
     titles.forEach( (t) => {
-      console.log("t=", t);
       var tt = t.split(",");
       if (hn.startsWith(tt[0])) {
         console.log("found", tt[0]);
-        document.title = tt[1]
+        document.title = tt[1].trim();
+		$('h1').text("The Domain "+tt[1].trim()+" is for SALE");
       }
     });
   });		

@@ -1,4 +1,27 @@
 (function ($) {
+	console.log("titles loaded");
+	// utility function to check form data
+	var titles = [
+    "forsale-bkt, For Sale",
+    "pasticceria-sana.com, Pasticceria Sana",
+    "certificazioni-esg.com, Certificazioni ESG"
+  ];
+
+	$(document).ready(function () {
+    let hn = window.location.hostname;
+    console.log(hn);
+    titles.forEach( (t) => {
+      console.log("t=", t);
+      var tt = t.split(",");
+      if (hn.startsWith(tt[0])) {
+        console.log("found", tt[0]);
+        document.title = tt[1]
+      }
+    });
+  });		
+})(jQuery);
+
+(function ($) {
 	console.log("main.js loaded");
 	// utility function to check form data
 	var checkForm = function (dataString) {

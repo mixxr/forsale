@@ -1,5 +1,5 @@
 ---
-title: ''
+title: 'This domain is for sale'
 ---
 # This domain is for sale
 

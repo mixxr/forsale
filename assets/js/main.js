@@ -1,0 +1,46 @@
+(function ($) {
+	console.log("main.js loaded");
+	// utility function to check form data
+	var checkForm = function (dataString) {
+		return true;
+	}
+
+	$(document).ready(function () {
+		$("#submitButton").click(function (event) {
+			event.preventDefault(); // Prevent default form submission
+			try {
+				var ele = document.getElementById("contactForm");
+				if (!ele.checkValidity()) {
+					ele.reportValidity();
+					return;
+				}
+				let form = $("#contactForm");
+				let url = form.attr('action');
+
+				if (checkForm(form.serialize())) {
+					$.ajax({
+						type: "POST",
+						url: url,
+						headers: {
+							"Authorization": "Bearer d1gitalP0stur3==="
+						},
+						data: form.serialize(), // Serialize form data
+						success: function (data) {
+							alert("Form Submitted Successfully");
+							form.trigger("reset"); // Reset the form after successful submission
+						},
+						error: function (data) {
+							alert("Error occurred while submitting the form");
+						}
+					});
+				} else {
+					event.preventDefault();
+					console.log("Form validation failed");
+				}
+			} catch (err) {
+				console.error("Error in submitButton click handler:", err);
+				return false;
+			}
+		});
+	});
+})(jQuery);

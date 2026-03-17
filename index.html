@@ -14,13 +14,17 @@
 <p>Please send a request by using the following form</p>
  <form id="contactForm" method="post" action="https://eo3xqozda3ra2kr.m.pipedream.net/contactform"
 					style="width:100%;">
+	 <label for="fname">First Name</label>
    <input type="text" name="demo-name" id="demo-name" value="" placeholder="Name*" required
 								aria-label="Name" autocomplete="given-name"/>
-   <input type="email" name="demo-email" id="demo-email" value="" placeholder="Email*" required
+
+  <label for="lname">Last Name</label>
+  <input type="email" name="demo-email" id="demo-email" value="" placeholder="Email*" required
 								aria-label="Email" autocomplete="email" />
-   <div>
-			<textarea name="demo-message" id="demo-message" placeholder="Inserisci la tua richiesta*" rows="6" required aria-label="Optional message to be contacted"></textarea>
-	 </div>
+
+  <label for="country">Country</label>
+  <textarea name="demo-message" id="demo-message" placeholder="Optional message to be contacted" rows="6" aria-label="Optional message to be contacted"></textarea>
+	 
    <input id="submitButton" type="submit" value="Send Message" class="button" formnovalidate aria-label="Send Message" />
  </form>
 <script src="/assets/js/jquery.min.js"></script>

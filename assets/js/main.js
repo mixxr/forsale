@@ -18,7 +18,7 @@
       if (hn.startsWith(tt[0])) {
         console.log("found", tt[0]);
         document.title = tt[1].trim();
-		$('h1').text("The Domain "+tt[1].trim()+" is for SALE");
+		$('h1').text("The Domain '"+tt[1].trim()+"' is for SALE");
       }
     });
   });		
